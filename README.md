@@ -22,3 +22,15 @@ The  STACK deploys the following specific resources and software:
    -  ExpressJS Web Server Framework <br>
    -  Other Node.js Packages and <br>
    -  PostgreSQL
+
+
+## DEPLOYING THE CDK STACK
+
+### To deploy the stack  on ```AWS```, follow the steps in the following link:
+
+<strong>CDK for Terraform Application</strong>: https://learn.hashicorp.com/tutorials/terraform/cdktf-build-python?in=terraform/cdktf
+  
+<br>
+
+##
+## <strong>Copyright © 2015 - present. MongoExpUser.  All Rights Reserved. </strong>
