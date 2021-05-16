@@ -113,6 +113,7 @@ install_and_configure_nodejs_web_server () {
     # install express.js (the web server framework) and other node.js packages
     sudo npm i express@5.0.0-alpha.8
     sudo npm i -g npm
+    sudo npm i aws-sdk
     sudo npm i bcryptjs
     sudo npm i bcrypt-nodejs
     sudo npm i bindings
@@ -131,7 +132,7 @@ install_and_configure_nodejs_web_server () {
     sudo npm i mkdirp
     sudo npm i postgres
     sudo npm i ocsp
-    sudo npm i postgres
+    sudo npm i pg
     sudo npm i python-shell
     sudo npm i serve-favicon
     sudo npm i serve-index
