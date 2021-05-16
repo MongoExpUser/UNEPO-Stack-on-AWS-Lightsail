@@ -2,7 +2,7 @@
 
 <br>
 <strong>
-Deploys Ubuntu, NodeJS, ExpressJS and PostgreSQL (UNEPO) Stack on AWS Lightsail with Python Terraform CDK.
+Deploys Ubuntu, NodeJS, ExpressJS and PostgreSQL (UNEPO) Stack on AWS Lightsail with Terraform Python CDK.
 </strong>
 <br><br>
 The  STACK deploys the following specific resources and software:
