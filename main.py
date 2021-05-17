@@ -171,8 +171,8 @@ def main():
         "lightsail_server_names" : ["server", "server"],
         "lightsail_server_blueprint_ids" : ["ubuntu_20_04", "ubuntu_20_04"],
         "lightsail_server_bundle_ids" : ["micro_2_0", "micro_2_0"],
-        "lightsail_server_tags_keys_version_nodejs" : ["NodeJS 16.0.0", "NodeJS 16.0.0"],
-        "lightsail_server_tags_keys_version_postgresql" : ["PostgreSQL 13.2", "PostgreSQL 13.2"],
+        "lightsail_server_tags_keys_version_nodejs" : ["NodeJS 16.0.x", "NodeJS 16.0.x"],
+        "lightsail_server_tags_keys_version_postgresql" : ["PostgreSQL 13.x", "PostgreSQL 13.x"],
         "lightsail_server_tags_empty_values" : ["", ""],
         "lightsail_server_static_ip_names" : ["static-ip", "static-ip"],
         # 3. launch or start-up script(s) variables
