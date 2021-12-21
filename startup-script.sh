@@ -133,6 +133,7 @@ install_and_configure_nodejs_web_server () {
     sudo npm i ocsp
     sudo npm i pg
     sudo npm i python-shell
+    sudo npm i s3-proxy
     sudo npm i serve-favicon
     sudo npm i serve-index
     sudo npm i uglify-js2
