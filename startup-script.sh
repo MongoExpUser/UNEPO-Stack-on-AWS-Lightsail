@@ -162,10 +162,14 @@ install_postgresql_server () {
   if [ $enable_postgresql_server = true ]
   then
     # install postgresql latest version
+    # 1. create the file repository configuration:
+    sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+    # 2. import the repository signing key:
+    wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+    # 3. update the package lists:
     sudo apt-get update
-    echo -e "Y"
-    # for specific version, include the version number e.g 'postgresql-9', postgresql-10', postgresql-11', etc.
-    sudo apt-get install -y postgresql
+    # 4.  finally, install: for specific version (include version number e.g 'postgresql-12', postgresql-13', or postgresql-14')
+    sudo apt-get -y install postgresql
     echo -e "Y"
     echo -e "Y"
     
@@ -176,7 +180,6 @@ install_postgresql_server () {
     # clean
     sudo apt autoclean
     sudo apt autoremove
-    
     
     # by default, postgresql auto starts after installation
     
