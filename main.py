@@ -32,7 +32,7 @@ from pprint import pprint
 from constructs import Construct
 from imports.aws import AwsProvider
 from cdktf import App, NamedRemoteWorkspace, TerraformStack, TerraformOutput, RemoteBackend
-from imports.aws.lightsail import LightsailKeyPair, LightsailInstance, LightsailInstancePublicPorts, LightsailStaticIp, LightsailStaticIpAttachment
+from imports.aws.lightsail import LightsailKeyPair, LightsailInstance, LightsailStaticIp, LightsailStaticIpAttachment
 
 
 class LightsailStack(TerraformStack):
