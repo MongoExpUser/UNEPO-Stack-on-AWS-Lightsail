@@ -165,7 +165,7 @@ class LightsailStack(TerraformStack):
         return {"confirm" : (confirm_one == confirm_two == confirm_three == confirm_four), "length" : length }
 
 def main():
-    filename = "input_config_file.json"
+    filename = "input-config-file.json"
     variables = None
     
     if filename:
