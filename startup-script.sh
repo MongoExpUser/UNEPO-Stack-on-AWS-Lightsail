@@ -353,16 +353,16 @@ install_postgresql_server () {
     # b) other security settings are enabled in the configuration file (/etc/postgresql/version/main/postgresql.conf) - version could be 9.6, 12.6, 14, etc.
     #   important settings with in  'postgresql.conf' include:
     #   ======================================================
-    #   listen_addresses = 'localhost'              # default is 'localhost' but can set to the desired value  as indicatated below.
-    #   listen_addresses = '0.0.0.0'                # all IPv4 addresses
-    #   listen_addresses = '::'                     # all IPv6 addresses
-    #   listen_addresses = '*'                      # all ip (IP4 and IPv6) addresses
-    #   host  all           all   0.0.0.0/0    md5  # Allow access to all databases for all users with an encrypted password, from all ip4 endpoints
-    #   host  replication   all   0.0.0.0/0    md5  # Allow replication connections for all users with an encrypted password, from all ip4 endpoint
-    #   max_connections = 100                       # default is 100 but can set to the desired value
-    #   work_mem = 25M                              # default is 25M but set to = 0.25 x RAM  / max_connections
-    #   shared_buffers = 128MB                      # default is 128MB but set to = 15% to 25% x RAM
-    #   maintenance_work_mem = 64MB                 # default is 64MB but set to = 0.05 x RAM and ensure greater than (>) work_mem
+    #   listen_addresses = 'localhost'                         # default is 'localhost' but can set to the desired value  as indicatated below.  
+    #   listen_addresses = '0.0.0.0'                           # all IPv4 addresses
+    #   listen_addresses = '::'                                # all IPv6 addresses
+    #   listen_addresses = '*'                                 # all ip (IP4 and IPv6) addresses
+    #   host  all           all   0.0.0.0/0    scram-sha-256   # Allow access to all databases for all users with an encrypted password, from all ip4 endpoints
+    #   host  replication   all   0.0.0.0/0    scram-sha-256   # Allow replication connections for all users with an encrypted password, from all ip4 endpoint
+    #   max_connections = 100                                  # default is 100 but can set to the desired value  
+    #   work_mem = 25M                                         # default is 25M but set to = 0.25 x RAM  / max_connections
+    #   shared_buffers = 128MB                                 # default is 128MB but set to = 15% to 25% x RAM
+    #   maintenance_work_mem = 64MB                            # default is 64MB but set to = 0.05 x RAM and ensure greater than (>) work_mem
     #   ======================================================
     #   Note: change 'localhost', '0.0.0.0/0', '::', and '*'  to the desired endpoint(s) -> (ip4 or 1p6)
     
