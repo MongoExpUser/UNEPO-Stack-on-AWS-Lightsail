@@ -15,7 +15,7 @@
   "lightsail_server_tags_keys_version_postgresql" : ["PostgreSQL 14.x", "PostgreSQL 14.x"],
   "lightsail_server_tags_empty_values" : ["", ""],
   "lightsail_server_static_ip_names" : ["static-ip", "static-ip"],
-  "// comment 2." : "next parameter is the launch or start-up script(s) variables",
+  "// comment 2." : "next parameter is the launch or start-up script(s) variable",
   "user_data_file_path" : "startup-script.sh",
   "longer_prefix_or_suffix" : "yes",
   "org_name" : "org",
