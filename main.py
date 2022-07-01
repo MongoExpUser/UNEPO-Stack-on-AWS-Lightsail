@@ -62,7 +62,7 @@ class LightsailStack(TerraformStack):
             ls_static_ip_attachment_output_list = []
             prefix = None
             if str(self.longer_prefix_or_suffix) == "yes":
-                prefix = "{}{}{}{}{}{}".format(self.var.get("org_name"), "-", self.var.get("project_name"), "-", self.var.get("environment"), "-")
+                prefix = "{}{}{}{}".format(self.var.get("org_name"), "-", self.var.get("environment"), "-")
             else:
                 prefix = "{}{}".format(self.var.get("environment"), "-")
                 
