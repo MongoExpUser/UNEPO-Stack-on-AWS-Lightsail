@@ -363,6 +363,7 @@ install_postgresql_server () {
     #   work_mem = 25M                                         # default is 25M but set to = 0.25 x RAM  / max_connections
     #   shared_buffers = 128MB                                 # default is 128MB but set to = 15% to 25% x RAM
     #   maintenance_work_mem = 64MB                            # default is 64MB but set to = 0.05 x RAM and ensure greater than (>) work_mem
+    #   autovacuum = on                                        # default 
     #   ======================================================
     #   Note: change 'localhost', '0.0.0.0/0', '::', and '*'  to the desired endpoint(s) -> (ip4 or 1p6)
     
