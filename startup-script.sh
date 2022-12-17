@@ -260,6 +260,7 @@ install_and_configure_nodejs_web_server () {
     sudo npm install formidable
     sudo npm install html-minifier
     sudo npm install jsdom
+    sudo npm install jsonschema
     sudo npm install level
     sudo npm install memored
     sudo npm install mime
@@ -340,6 +341,7 @@ install_postgresql_server () {
     echo -e "Y"
     
     # clean
+    sudo chmod 775 /var/lib/apt/lists/
     sudo rm -rf /var/lib/apt/lists/*
     echo -e "Y"
     echo -e "Y"
