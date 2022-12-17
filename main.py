@@ -177,7 +177,8 @@ def main():
         app = App()
         LightsailStack(app, variables.get("stack_name"), variables)
         app.synth()
-        
+      
     
 if __name__ in ["__main__"]:
     main()
+    
