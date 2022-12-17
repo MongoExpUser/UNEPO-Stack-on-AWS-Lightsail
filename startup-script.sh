@@ -18,7 +18,11 @@
 
 
 #!/bin/bash
-
+# set permssion 
+bash
+sudo chmod 775 /home
+sudo chmod 775 /home/ubuntu
+  
 # define all common variable(s)
 base_dir="base"
 server_dir="server"
@@ -28,9 +32,7 @@ enable_postgresql_server="yes"
 
 
 create_dir_and_install_missing_packages () {
-  # set permssion and create relevant directories
-  sudo chmod 777 /home
-  sudo chmod 777 /home/ubuntu
+  # create relevant directories
   cd /home/
   sudo mkdir $base_dir
   cd $base_dir
@@ -38,116 +40,116 @@ create_dir_and_install_missing_packages () {
   sudo mkdir $client_dir
       
   # update system
-  sudo apt-get update
+  sudo apt-get -y update
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get upgrade
+  sudo apt-get -y upgrade
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get dist-upgrade
+  sudo apt-get -y dist-upgrade
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
       
   # install additional packages (in case not available in the base image)
-  sudo apt-get install sshpass
+  sudo apt-get -y install sshpass
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install cmdtest
+  sudo apt-get -y install cmdtest
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install spamassassin
+  sudo apt-get -y install spamassassin
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install snap
+  sudo apt-get -y install snap
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install nmap
+  sudo apt-get -y install nmap
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install net-tools
+  sudo apt-get -y install net-tools
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install aptitude
+  sudo apt-get -y install aptitude
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install build-essential
+  sudo apt-get -y install build-essential
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install gcc
+  sudo apt-get -y install gcc
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install certbot
+  sudo apt-get -y install certbot
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install python3-certbot-apache
+  sudo apt-get -y install python3-certbot-apache
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install systemd
+  sudo apt-get -y install systemd
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install procps
+  sudo apt-get -y install procps
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install nano
+  sudo apt-get -y install nano
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install apt-utils
+  sudo apt-get -y install apt-utils
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install wget
+  sudo apt-get -y install wget
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install curl
+  sudo apt-get -y install curl
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install gnupg
+  sudo apt-get -y install gnupg
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install gnupg2
+  sudo apt-get -y install gnupg2
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install make
+  sudo apt-get -y install make
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install sshpass
+  sudo apt-get -y install sshpass
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install cmdtest
+  sudo apt-get -y install cmdtest
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install snapd
+  sudo apt-get -y install snapd
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install screen
+  sudo apt-get -y install screen
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install spamc
+  sudo apt-get -y install spamc
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
@@ -155,15 +157,19 @@ create_dir_and_install_missing_packages () {
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install iputils-ping
+  sudo apt-get -y install iputils-ping
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install unzip
+  sudo apt-get -y install unzip
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  sudo apt-get install xfsprogs
+  sudo apt-get -y install gzip
+  echo -e "Y"
+  echo -e "Y"
+  echo -e "Y"
+  sudo apt-get -y install xfsprogs
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
@@ -180,24 +186,21 @@ create_dir_and_install_missing_packages () {
   echo -e "Y"
   sudo ./aws/install
   
-  #  python 3.8
-  sudo apt-get install python3.8
+  #  python 3.10
+  sudo apt-get -y install python3.10
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  
   #  python3-pip
-  sudo apt-get install python3-pip
+  sudo apt-get -y install python3-pip
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  
-  #  boto3
-  sudo python3 -m pip install boto3
+  #  boto3 & sb-json-tools
+  sudo python3 -m pip install sb-json-tools
   echo -e "Y"
   echo -e "Y"
   echo -e "Y"
-  
   #  awscli & upgrade awscli (version 1)
   sudo apt-get -y install awscli
   echo -e "Y"
@@ -215,8 +218,8 @@ install_and_configure_nodejs_web_server () {
   
   if [ $enable_web_server = "yes" ]
   then
-    # install node.js
-    curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+    # install node.js - version 19
+    curl -sL https://deb.nodesource.com/setup_19.x | sudo -E bash -
     echo -e "\n"
     sudo apt-get install -y nodejs
     echo -e "\n"
@@ -256,6 +259,7 @@ install_and_configure_nodejs_web_server () {
     sudo npm install express-session
     sudo npm install formidable
     sudo npm install html-minifier
+    sudo npm install jsdom
     sudo npm install level
     sudo npm install memored
     sudo npm install mime
@@ -272,19 +276,27 @@ install_and_configure_nodejs_web_server () {
     sudo npm install uglifycss
     sudo npm install uuid
     sudo npm install vhost
-    sudo npm install @faker-js/faker
+    sudo npm install @faker-js/faker@7.3.0  # faker should be v7.3.0 or v7.3.0+
     sudo npm install mongodb
     sudo npm install namesilo-domain-api
     sudo npm install xml2js
-    # b. all modules of aws sdk for javaScript/node.sj v2
+    # b. other db drivers
+    sudo npm install mysql 
+    sudo npm install @mysql/xdevapi
+    sudo npm install redis
+    sudo npm install sqlite3
+    sudo npm install gremlin
+    sudo npm install neo4j-driver
+    # c. all modules of aws sdk for javaScript/node.sj v2
     sudo npm install aws-sdk
-    # c. selected modules of aws sdk for javascript/node.sj v3
+    # d. selected modules of aws sdk for javascript/node.sj v3
     sudo npm install @aws-sdk/client-apigatewayv2
     sudo npm install @aws-sdk/client-comprehend
     sudo npm install @aws-sdk/client-comprehendmedical
+    sudo npm install @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb 
     sudo npm install @aws-sdk/client-efs
-    sudo npm install @aws-sdk/client-elasticache
-    sudo npm install @aws-sdk/client-elasticsearch-service
+    sudo npm install @aws-sdk/client-opensearch
+    sudo npm install @aws-sdk/client-opensearchserverless
     sudo npm install @aws-sdk/client-firehose
     sudo npm install @aws-sdk/client-lambda
     sudo npm install @aws-sdk/client-lex-model-building-service
@@ -302,7 +314,7 @@ install_and_configure_nodejs_web_server () {
     sudo npm install @aws-sdk/client-rekognition
     sudo npm install @aws-sdk/client-rds
     sudo npm install @aws-sdk/client-rds-data
-    sudo npm install @aws-sdk/client-s3
+    sudo npm install @aws-sdk/client-s3 @aws-sdk/lib-storage
     sudo npm install @aws-sdk/client-sns
     sudo npm install @aws-sdk/client-timestream-query
     sudo npm install @aws-sdk/client-timestream-write
@@ -321,12 +333,11 @@ install_postgresql_server () {
     # 2. import the repository signing key:
     wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
     # 3. update the package lists:
-    sudo apt-get update
+    sudo apt-get -y update
     # 4.  finally, install
     sudo apt-get -y install postgresql
     echo -e "Y"
     echo -e "Y"
-    
     
     # clean
     sudo rm -rf /var/lib/apt/lists/*
@@ -371,7 +382,7 @@ install_postgresql_server () {
 }
 
 clean_system () {
-  sudo chmod 777 /var/lib/apt/lists/
+  sudo chmod 775 /var/lib/apt/lists/
   sudo rm -rf /var/lib/apt/lists/*
   echo -e "Y"
   echo -e "Y"
