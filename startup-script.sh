@@ -148,7 +148,7 @@ create_dir_and_install_missing_packages () {
       sudo apt-get -y install spamc
       echo -e "Y"
       echo -e "Y"
-      sudo apt-get install parted
+      sudo apt-get -y install parted
       echo -e "Y"
       echo -e "Y"
       sudo apt-get -y install iputils-ping
@@ -174,8 +174,8 @@ create_dir_and_install_missing_packages () {
       echo -e "Y"
       sudo ./aws/install
       
-      #  python 3.10
-      sudo apt-get -y install python3.10
+      #  python 3.x
+      sudo apt-get -y install python3
       echo -e "Y"
       echo -e "Y"
       #  python3-pip
@@ -208,7 +208,7 @@ install_and_configure_nodejs_web_server () {
         # install node.js - version 19
         curl -sL https://deb.nodesource.com/setup_19.x | sudo -E bash -
         echo -e "\n"
-        sudo apt-get install -y nodejs
+        sudo apt-get -y install nodejs
         echo -e "\n"
             
         # create node.js' package.json file
