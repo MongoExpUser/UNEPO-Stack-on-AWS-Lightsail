@@ -299,7 +299,7 @@ install_and_configure_nodejs_web_server () {
         sudo npm install @aws-sdk/client-polly
         sudo npm install @aws-sdk/client-redshift
         sudo npm install @aws-sdk/client-redshift-data
-        sudo npm install @aws-sdk/client-redshiftserverless
+        sudo npm install @aws-sdk/client-redshift-serverless
         sudo npm install @aws-sdk/client-rekognition
         sudo npm install @aws-sdk/client-rds
         sudo npm install @aws-sdk/client-rds-data
