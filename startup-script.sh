@@ -182,8 +182,11 @@ create_dir_and_install_missing_packages () {
       sudo apt-get -y install python3-pip
       echo -e "Y"
       echo -e "Y"
-      #  boto3 & sb-json-tools
-      sudo python3 -m pip install sb-json-tools
+      #  boto3, tensorflow, sb-json-tools, etc
+      sudo python3 -m pip install boto3 tensorflow sb-json-tools
+      echo -e "Y"
+      echo -e "Y"
+      sudo -H python3 -m pip install jupyterlab jupyterlab-night
       echo -e "Y"
       echo -e "Y"
       #  awscli & upgrade awscli (version 1)
