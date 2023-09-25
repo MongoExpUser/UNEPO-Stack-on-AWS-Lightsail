@@ -339,10 +339,7 @@ install_postgresql_server () {
         echo -e "Y"
         echo -e "Y"
 
-        # 5. set  permission on /mongod.log
-        sudo chmod -R 775 /var/log/mongodb/mongod.log
-        
-        # 6. clean
+        # 5. clean
         clean_system
         
         # by default, postgresql auto starts after installation
